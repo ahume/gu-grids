@@ -1,0 +1,113 @@
+@import "main";
+@import "fonts";
+@import "type";
+
+a,
+a:link
+a:visited {
+    color: #333;
+    font-weight: bold;
+}
+a:hover,
+a:active {
+    color: #111;
+}
+
+.grid-test {
+    width: 5.882%;
+    outline: 1px solid red;
+    height: 50px;
+    float: left;
+    display: none;
+}
+.grid-test.middle {
+    background: red;
+}
+.controls {
+    min-height: 30px;
+    font-size: 14px !important;
+    font-family: helvetica;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+}
+.controls p {
+    margin: 0;
+    padding: 5px;
+    width: 33.333%;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+    overflow: hidden;
+}
+.controls a {
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #ddd;
+    display: inline-block;
+    padding: 1px 5px;
+}
+.controls a.on {
+    background: #bbb;
+    box-shadow: none;
+}
+.controls input[type="number"] {
+    padding: 1px;
+}
+.gug-container {
+    margin-top: 70px;
+}
+
+/* Don't do this of course, we'll have a normalise. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    line-height: 1;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.gug-grid-overlay {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 1px;
+    background-image: url(/images/fluid-grid4.png);
+    background-position: 0 0;
+    background-repeat: repeat-x repeat-y;
+    background-size: 103%;
+    overflow: hidden;
+    opacity: 0.3;
+}
+@media only screen and (min-width:500px){
+    .gug-grid-overlay {
+        background-size: 50.9%;
+    }
+}
+
+.adaptive .gug-grid-overlay {
+    background-image: url(/images/adaptive-grid.png);
+    background-size: 17.5%;
+}
+@media only screen and (min-width:500px){
+    .adaptive .gug-grid-overlay {
+        background-size: 8.53%;
+    }
+}

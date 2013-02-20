@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'GuardianEgyptian';
+    src: url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Reg.eot');
+    src: url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Reg.eot?#iefix') format('embedded-opentype'),
+         url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Reg.woff') format('woff'),
+         url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Reg.ttf') format('truetype'),
+         url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Reg.svg#Guardian-Text-Egyp-Web-Reg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'GuardianEgyptian';
+    src: url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Med.eot');
+    src: url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Med.eot?#iefix') format('embedded-opentype'),
+         url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Med.woff') format('woff'),
+         url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Med.ttf') format('truetype'),
+         url('http://pasteup.s3.amazonaws.com/fonts/latin1/Guardian-Text-Egyp-Web-Med.svg#Guardian-Text-Egyp-Web-Reg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+}

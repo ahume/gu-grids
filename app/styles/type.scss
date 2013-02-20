@@ -1,0 +1,42 @@
+html {
+	font-size: 62.5%;
+	font-size: 0.625em;
+	font-family: GuardianEgyptian, monospace;
+}
+
+body {
+	font-size: 100%;
+	font-size: 1.6em;
+	line-height: 1.4em;
+    color: #333;
+}
+
+.headline {
+	font-family: GuardianEgyptian, monospace;
+	margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    line-height: 2.8rem;
+}
+
+.standfirst {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.caption {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+.byline {
+	font-size: 1.4rem;
+	line-height: 2rem;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 1rem;
+	padding: 0.4rem 0 1.6rem 0;
+}
+
+p { 
+    margin-bottom: 1.24em;
+}

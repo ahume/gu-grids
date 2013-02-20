@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GU Grid</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/grid-test.css">
+        <script>
+            var feedback, body, sizeFeedback, container;
+            function showGrid(link) {
+                var grid = document.querySelector('.gug-grid-overlay');
+                if (grid.style.display !== 'block') {
+                    grid.style.display = 'block';
+                } else {
+                    grid.style.display = 'none';
+                }
+                link.classList.toggle('on');
+            }
+            function updateFontSize(input) {
+                var size = input.valueAsNumber + "em";
+                body.style.fontSize = size;
+                feedback.innerHTML = size;
+            }
+            function updateLineHeight(input) {
+                var size = input.valueAsNumber;
+                body.style.lineHeight = size;
+                feedback.innerHTML = size;
+            }
+            window.onload = function() {
+                feedback = document.getElementById('font-size-current');
+                sizeFeedback = document.getElementById('width-current');
+                container = document.querySelector('.gug-container');
+                body = document.body;
+                sizeFeedback.innerHTML = container.offsetWidth + "px";
+            }
+            window.onresize = function() {
+                sizeFeedback.innerHTML = container.offsetWidth + "px";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="controls">
+            <p><a href="#" onclick="showGrid(this); return false;">Show Grid</a></p>
+
+            <p><strong>Font size:</strong> <input id="font-size" type="number" min="0" max="2" step="0.01" value="1" onchange="updateFontSize(this); return;" /></p>
+            <p><strong>Line height:</strong> <input id="line-height" type="number" min="0" max="2" step="0.01" value="1.4" onchange="updateLineHeight(this); return;" /></p>
+            <p><strong>Width:</strong> <span id="width-current"></span></p>
+
+        </div>
+        <div class="gug-container">
+            <div class="gug-grid-overlay"></div>
+            <!--<div class="sample-text">
+                <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+            </div>-->
+
+            <h3 class="headline">This is a headline, set in Guardian Egyptian Medium: headline text in a variety of different and opposing style hooks</h3>
+
+            <!-- 2 columns -->
+            <div class="gug-row">
+                <div class="gug-unit gug-1of1">
+                    <div class="module">
+                        <p class="standfirst">The easiest way. To make one thing behave in a variety of different (and opposing; remember,</p>
+                        <img src="/images/3x2.gif" alt="" />
+                        <p class="caption">Caption text goes here. To make one thing behave in a variety of different (and opposing; remember,=.</p>
+                    </div>
+                </div>
+                <div class="gug-unit gug-1of1">
+                    <div class="module">
+                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                    </div>
+                </div>
+            </div><!-- /.gug-row -->
+
+
+            <!-- 3 columns -->
+            <div class="gug-row">
+                <div class="gug-unit gug-1of1 medium-gug-2of6 desktop-gug-3of12">
+                    <div class="module">
+                        <p>Text, might be on a baseline</p>
+                        <img src="/images/3x2.gif" alt="" />
+                    </div>
+                </div>
+                <div class="gug-unit gug-1of1 medium-gug-4of6 desktop-gug-9of12">
+                    <div class="module">
+                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                    </div>
+                </div>
+            </div><!-- /.gug-row -->
+
+
+        </div>
+
+    </body>
+</html>
