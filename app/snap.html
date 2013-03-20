@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GU Grid</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/grid-test.css">
+        <link rel="stylesheet" href="styles/breakpoints-adaptive.css">
+        <style>
+            .show {outline: 1px solid red;}
+        </style>
+        <script src="scripts/snap.js"></script>
+        <script> 
+            function throttle(fn, delay) {
+              var timer = null;
+              return function () {
+                var context = this, args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                  fn.apply(context, args);
+                }, delay);
+              };
+            }
+            WebFontConfig = {
+                custom: {
+                    families: ['EgyptianText', 'EgyptianHeadline'],
+                    urls: ['/css/fonts.css']
+                },
+                active: function() {
+                    doTheSnap();
+                }
+            };
+            document.addEventListener('DOMContentLoaded', function() {
+                loadFonts();
+            }, false);
+            window.onload = function() { document.querySelector('.gug-grid-overlay').style.display = 'block'; }
+            window.onscroll = function() {
+                throttle(function() {
+                    doTheSnap()
+                }, 1000);
+            }
+        </script>
+    </head>
+    <body class="adaptive">
+        <div class="gug-container">
+            <div class="gug-grid-overlay"></div>
+            <div class="gug-row">
+            <div class="gug-unit gug-1of1 medium-gug-1of2 large-gug-1of4">
+                <p class="show grid-reset">Here is a paragraph of indeterminate length length length</p>
+            </div>
+            <div class="gug-unit gug-1of1 medium-gug-1of2 large-gug-1of4">
+                <p class="show grid-reset">Here is a paragraph</p>
+                <p class="show grid-reset">Here is a paragraph indeterminate length length length indeterminate length length length indeterminate length length length indeterminat length length indeterminat length length indeterminated</p>
+            </div>
+            <div class="gug-unit gug-1of1 medium-gug-1of2 large-gug-1of4 grid-reset">
+                <img src="/images/3x2.gif" alt="" />
+            </div>
+            <div class="gug-unit gug-1of1 medium-gug-1of2 large-gug-1of4 grid-reset">
+                <img src="/images/3x2.gif" alt="" />
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

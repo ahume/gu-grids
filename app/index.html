@@ -11,6 +11,20 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="styles/grid-test.css">
+        <link rel="stylesheet" href="styles/breakpoints.css">
+        <script src="scripts/snap.js"></script>
+        <script>
+            WebFontConfig = {
+                custom: {
+                    families: ['EgyptianText', 'EgyptianHeadline'],
+                    urls: ['/css/fonts.css']
+                }
+            };
+            document.addEventListener('DOMContentLoaded', function() {
+                loadFonts();
+            }, false);
+
+        </script>
         <script>
             var feedback, body, sizeFeedback, container;
             function showGrid(link) {
@@ -35,7 +49,7 @@
             window.onload = function() {
                 feedback = document.getElementById('font-size-current');
                 sizeFeedback = document.getElementById('width-current');
-                container = document.querySelector('.gug-container');
+                container = document.body
                 body = document.body;
                 sizeFeedback.innerHTML = container.offsetWidth + "px";
             }
@@ -43,8 +57,11 @@
                 sizeFeedback.innerHTML = container.offsetWidth + "px";
             }
         </script>
+        <script src="/scripts/main.js" async></script>
+        <script src="/scripts/vendor/jquery.min.js" async></script>
+        <script src="/scripts/vendor/modernizr.min.js" async></script>
     </head>
-    <body>
+    <body class="fluid">
         <div class="controls">
             <p><a href="#" onclick="showGrid(this); return false;">Show Grid</a></p>
 
@@ -55,47 +72,111 @@
         </div>
         <div class="gug-container">
             <div class="gug-grid-overlay"></div>
-            <!--<div class="sample-text">
-                <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
-                <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
-            </div>-->
+            <div class="sample-text">
+                <!--<p class="type-12">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-11">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-10">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-9">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-8">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-7">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-6">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-5">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-4">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-3">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-2">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-1">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                <p class="type-0">The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>-->
 
-            <h3 class="headline">This is a headline, set in Guardian Egyptian Medium: headline text in a variety of different and opposing style hooks</h3>
+            </div>
 
             <!-- 2 columns -->
             <div class="gug-row">
-                <div class="gug-unit gug-1of1">
-                    <div class="module">
-                        <p class="standfirst">The easiest way. To make one thing behave in a variety of different (and opposing; remember,</p>
-                        <img src="/images/3x2.gif" alt="" />
-                        <p class="caption">Caption text goes here. To make one thing behave in a variety of different (and opposing; remember,=.</p>
-                    </div>
+                <div class="gug-unit gug-1of1 medium-gug-1of12 desktop-gug-2of12">&nbsp;</div>
+                <div class="gug-unit gug-1of1 medium-gug-10of12 desktop-gug-8of12">
+                    <header class="article-head">
+                        <p class="dateline type-11"> 
+                            <i class="i i-date"></i> 
+                            <time itemprop="datePublished" datetime="2013-02-26T11:30:22Z" data-timestamp="1361878222000"> Tuesday 26 February 2013 11.30 GMT </time>
+                        </p>
+                        <h1 itemprop="headline" class="headline ">Luxor hot air balloon crash kills 18&nbsp;tourists</h1>
+                        <p class="standfirst type-7" itemprop="description" data-link-name="standfirst"> Two Britons die and two others survive after balloon catches fire and explodes west of Egyptian city on sunrise&nbsp;flight </p>
+                    </header>
+
+                    <img src="/images/3x2.gif" alt="" />
+                    <p class="caption">Police and rescuers inspect the wreckage of the hot air balloon. Photograph: Reuters</p>
+                    <p class="byline">This is a byline, My name goes here.</p>
+                    <p>The easiest way to make one thing behave in m*(45)* multiple differ*(65)*ent *(75)*ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                    <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                    <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
                 </div>
-                <div class="gug-unit gug-1of1">
-                    <div class="module">
-                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
-                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
-                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
-                    </div>
-                </div>
+                <div class="gug-unit gug-1of1 medium-gug-1of12 desktop-gug-2of12">&nbsp;</div>
             </div><!-- /.gug-row -->
 
 
             <!-- 3 columns -->
             <div class="gug-row">
-                <div class="gug-unit gug-1of1 medium-gug-2of6 desktop-gug-3of12">
-                    <div class="module">
-                        <p>Text, might be on a baseline</p>
-                        <img src="/images/3x2.gif" alt="" />
-                    </div>
+                <div class="gug-unit gug-1of1 medium-gug-4of12">
+                    <p>Text, might be on a baseline</p>
+                    <img src="/images/3x2.gif" alt="" />
                 </div>
-                <div class="gug-unit gug-1of1 medium-gug-4of6 desktop-gug-9of12">
-                    <div class="module">
-                        <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
-                    </div>
+                <div class="gug-unit gug-1of1 medium-gug-4of12">
+                    <p>Text, might be on a baseline</p>
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of1 medium-gug-4of12">
+                    <p>Text, might be on a baseline</p>
+                    <img src="/images/3x2.gif" alt="" />
                 </div>
             </div><!-- /.gug-row -->
 
+            <div class="gug-row">
+                <div class="gug-unit gug-1of1 medium-gug-1of12 desktop-gug-2of12">&nbsp;</div>
+                <div class="gug-unit gug-1of1 medium-gug-10of12 desktop-gug-8of12">
+                    <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states. The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                    <p>The easiest way to make one thing behave in multiple different ways is, simply, multiple style hooks (i.e. classes). To make one thing behave in a variety of different (and opposing; remember, a grid cannot be full-width and half-width at the same time) ways is to have a separate class for each of those states.</p>
+                </div>
+                <div class="gug-unit gug-1of1 medium-gug-1of12 desktop-gug-2of12">&nbsp;</div>
+            </div>
+
+            <div class="gug-row">
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+                <div class="gug-unit gug-1of6 medium-gug-1of6 desktop-gug-1of12">
+                    <img src="/images/3x2.gif" alt="" />
+                </div>
+
+            </div>
 
         </div>
 

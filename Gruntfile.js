@@ -41,11 +41,6 @@ module.exports = function( grunt ) {
       }
     },
 
-    // generate application cache manifest
-    manifest:{
-      dest: ''
-    },
-
     // headless testing through PhantomJS
     mocha: {
       all: ['test/**/*.html']

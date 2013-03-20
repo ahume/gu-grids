@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GU Grid</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <script src="http://static.guim.co.uk/static/3696b2e2bdc73c1c93d96ad7b5bec89cd8cec87e/common/scripts/libs/requirejs/1.0.8/requirejs.js"></script>-->
+        <!--<script src="http://pasteup.guim.co.uk/js/lib/requirejs/2.1.1/require.min.js"></script>-->
+
+
+        <script>
+            requirejs.config({
+                config: {
+                    'waitSeconds': 1
+                }
+            });
+
+            require(['http://s.ophan.co.uk/js/ophan.min.js', 'http://s.ophan.co.uk/js/campaign.min.js'], function(ophan, campaign) {
+                if (document.readyState === 'complete') {
+                    ophan.startLog();
+                } else {
+                    if (window.addEventListener) {
+                        window.addEventListener('load', ophan.startLog, false);
+                    } else if (window.attachEvent) {
+                        window.attachEvent('onload', ophan.startLog);
+                    }
+                }
+            });
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

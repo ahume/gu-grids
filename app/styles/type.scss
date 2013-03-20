@@ -1,42 +1,220 @@
+//Fonts
+$sans-serif: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$serif: "EgyptianText", georgia, serif;
+$serifheadline: "EgyptianHeadline", georgia, serif;
+
+//Set's baseline font size to 10px
+//This is used for all em's
 html {
 	font-size: 62.5%;
-	font-size: 0.625em;
-	font-family: GuardianEgyptian, monospace;
+	font-size: (10/16)*1em;
+	font-family: $serif;
 }
 
+//Bump font-size back upto 16px
 body {
 	font-size: 100%;
 	font-size: 1.6em;
-	line-height: 1.4em;
-    color: #333;
+    line-height: 1.4em;
+}
+
+// Base headings
+h1, h2, h3, h4, h5, h6 {
+	font-family: $serif;
+	margin: 0;
+}
+
+
+@mixin font($fontfamily, $font-size, $line-height, $margin-bottom, $weight, $ratio: 1) {
+	font-family: $fontfamily;
+	font-size: 1rem * $font-size * $ratio;
+	line-height: 1rem * $line-height * $ratio;
+	margin-bottom: 1rem * $margin-bottom;
+	font-weight: $weight;
+}
+
+
+@mixin type-12($ratio: 1) {
+	@include font($sans-serif, 1.1, 1.6, 0.8, normal, $ratio);
+}
+@mixin type-11($ratio: 1) {
+	@include font($sans-serif, 1.2, 1.6, 0.8, normal, $ratio);
+}
+@mixin type-10($ratio: 1) {
+	@include font($sans-serif, 1.3, 2, 0.8, normal, $ratio);
+}
+@mixin type-9($ratio: 1) {
+	@include font($sans-serif, 1.3, 2, 0.8, bold, $ratio);
+}
+@mixin type-8($ratio: 1) {
+	@include font($sans-serif, 1.4, 2, 0.8, normal, $ratio);
+}
+@mixin type-7($ratio: 1) {
+	@include font($serif, 1.4, 2, 0.8, normal, $ratio);
+}
+@mixin type-6($ratio: 1) {
+	@include font($serif, 1.6, 2.4, 0.8, normal, $ratio);
+}
+@mixin type-5($ratio: 1) {
+	@include font($serif, 1.6, 2.2, 0.8, 500, $ratio);
+}
+@mixin type-4($ratio: 1) {
+	@include font($serif, 1.8, 2.4, 0.8, 500, $ratio);
+}
+@mixin type-3($ratio: 1) {
+	@include font($serif, 2, 2.8, 0.8, 500, $ratio);
+}
+@mixin type-2($ratio: 1) {
+	@include font($serifheadline, 1.8, 2.8, 0.8, 600, $ratio);
+}
+@mixin type-1($ratio: 1) {
+	@include font($serifheadline, 2, 2.8, 0.8, 600, $ratio);
+}
+@mixin type-0($ratio: 1) {
+	@include font($serifheadline, 2.2, 3.2, 0.8, 600, $ratio);
+}
+
+
+.type-12 {
+	@include type-12;
+}
+.type-11 {
+	@include type-11;
+}
+.type-10 {
+	@include type-10;
+}
+.type-9 {
+	@include type-9;
+}
+.type-8 {
+	@include type-8;
+}
+.type-7 {
+	@include type-7;
+}
+.type-6 {
+	@include type-6;
+}
+.type-5 {
+	@include type-5;
+}
+.type-4 {
+	@include type-4;
+}
+.type-3 {
+	@include type-3;
+}
+.type-2 {
+	@include type-2;
+}
+.type-1 {
+	@include type-1;
+}
+.type-0 {
+	@include type-0;
+}
+
+
+
+
+
+
+@mixin paragraph($ratio: 1) {
+	@include type-6($ratio);
+}
+@mixin headline($ratio: 1) {
+	@include type-3($ratio);
+	padding-top: 0.2rem * $ratio;
+}
+@mixin standfirst($ratio: 1) {
+	@include type-7($ratio);
+	padding-top: 0.1rem * $ratio;
+}
+@mixin caption($ratio: 1) {
+	@include type-12($ratio);
+	padding-top: 0.45em * $ratio;
+}
+@mixin byline($ratio: 1) {
+	@include type-7($ratio);
+	border-top: 0.1rem solid #cccccc;
+	border-bottom: 0.1rem solid #cccccc;
+	padding-top: 0.6rem * $ratio;
+	padding-right: 0;
+	padding-bottom: 1.6rem * $ratio;
+	padding-left: 0;
+	margin-top: 3.5rem;
+}
+
+
+
+
+
+
+p { 
+    @include paragraph();
 }
 
 .headline {
-	font-family: GuardianEgyptian, monospace;
-	margin: 0 0 0.5rem 0;
-    font-size: 2rem;
-    line-height: 2.8rem;
+	@include headline();
 }
 
 .standfirst {
-    font-size: 1.4rem;
-    line-height: 2rem;
+    @include standfirst();
 }
 
 .caption {
-    font-size: 1.1rem;
-    line-height: 1.6rem;
+    @include caption();
 }
 
 .byline {
-	font-size: 1.4rem;
-	line-height: 2rem;
-	border-top: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
-	margin-bottom: 1rem;
-	padding: 0.4rem 0 1.6rem 0;
+	@include byline();
 }
 
-p { 
-    margin-bottom: 1.24em;
+@media only screen and (min-width:360px){
+	.headline {
+		@include headline(1.28571428571429);
+	}
+	.standfirst {
+		@include standfirst(1.2);
+	}
+}
+
+@media only screen and (min-width:500px){
+	.headline {
+		@include headline(1.57142857142857);
+	}
+	.standfirst {
+		@include standfirst(1.2);
+	}
+}
+
+@media only screen and (min-width:600px){
+	.headline {
+		@include headline(1.57142857142857);
+	}
+	.standfirst {
+		@include standfirst(1.3);
+	}
+	p {
+		@include paragraph(1.16666666666667)
+	}
+}
+
+@media only screen and (min-width:700px){
+	.headline {
+		@include headline(1.85714285714286);
+	}
+}
+
+@media only screen and (min-width:1000px){
+	p {
+		@include paragraph(1.33333333)
+	}
+	.headline {
+		@include headline(1.85714285714286);
+	}
+	.standfirst {
+		@include standfirst(1.6);
+	}
 }
